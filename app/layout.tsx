@@ -29,14 +29,6 @@ export const metadata: Metadata = {
     description: "Menos conversa, mais execução. Aplique para a imersão que vai mudar o jogo do seu negócio.",
     url: "https://cfclub.com.br", // Placeholder URL, should be updated when deploying
     siteName: "CF Club",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "CF CLUB - Builders Edition",
-      },
-    ],
     locale: "pt_BR",
     type: "website",
   },
@@ -44,7 +36,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CF CLUB • Builders Edition",
     description: "10 semanas de mão na massa no Sebrae Labs.",
-    images: ["/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",
