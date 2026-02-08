@@ -72,7 +72,7 @@ export default function Manifesto() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="font-sans text-2xl md:text-4xl font-black text-black tracking-tight leading-[0.9]"
+                                    className="font-sans text-2xl md:text-4xl font-black text-black tracking-tight leading-[0.9] pl-8 md:pl-12 -indent-8 md:-indent-12"
                                 >
                                     {item}
                                 </motion.li>
@@ -99,7 +99,7 @@ export default function Manifesto() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.2 + (i * 0.1) }}
-                                    className="font-sans text-xl md:text-2xl text-[#666666] font-light line-through decoration-2 decoration-black/30 transition-all cursor-not-allowed"
+                                    className="font-sans text-xl md:text-2xl text-[#666666] font-light line-through decoration-2 decoration-black/30 transition-all cursor-not-allowed pl-6 md:pl-8 -indent-6 md:-indent-8"
                                 >
                                     {item}
                                 </motion.li>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "CF Club",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "CF CLUB - Builders Edition",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CF CLUB • Builders Edition",
     description: "10 semanas de mão na massa no Sebrae Labs.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",

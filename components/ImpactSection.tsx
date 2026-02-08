@@ -37,7 +37,7 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
     return (
         <span ref={ref} className="tabular-nums">
             <motion.span>{display}</motion.span>
-            {suffix}
+            {suffix && <span className="ml-2 tracking-wide">{suffix}</span>}
         </span>
     );
 }
