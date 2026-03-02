@@ -9,7 +9,7 @@ export default function Methodology() {
 
             {/* Left Column: Theory (White) */}
             <motion.div
-                className="w-full md:w-1/2 bg-cf-white text-cf-black flex flex-col justify-center p-10 md:p-20 lg:p-28 border-b md:border-b-0 md:border-r border-cf-lines relative overflow-hidden"
+                className="w-full md:w-1/2 bg-cf-white text-cf-black flex flex-col justify-center p-6 md:p-20 lg:p-28 border-b md:border-b-0 md:border-r border-cf-lines relative overflow-hidden"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -18,8 +18,8 @@ export default function Methodology() {
                     <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-cf-dim uppercase mb-6 block">
                         O Conhecimento
                     </span>
-                    <h2 className="font-serif text-7xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-6">
-                        30<span className="text-4xl md:text-5xl italic ml-2">min</span>
+                    <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-6">
+                        30<span className="text-3xl md:text-5xl italic ml-2 tracking-wide">min</span>
                     </h2>
                     <p className="font-sans text-lg md:text-xl font-medium max-w-sm leading-relaxed">
                         Palestra Direta. <br />
@@ -30,7 +30,7 @@ export default function Methodology() {
             </motion.div>
 
             {/* Right Column: Practice (Dark) */}
-            <div className="w-full md:w-1/2 bg-cf-surface text-cf-white relative overflow-hidden group flex flex-col justify-center p-10 md:p-20 lg:p-28 min-h-[60vh] md:min-h-screen">
+            <div className="w-full md:w-1/2 bg-cf-surface text-cf-white relative overflow-hidden group flex flex-col justify-center p-6 md:p-20 lg:p-28 min-h-[50vh] md:min-h-screen">
 
                 {/* Background Image & Overlay */}
                 <div className="absolute inset-0 z-0">
@@ -54,8 +54,8 @@ export default function Methodology() {
                     <span className="font-mono text-xs md:text-sm tracking-[0.2em] text-gray-400 uppercase mb-6 block">
                         A Execução
                     </span>
-                    <h2 className="font-serif text-7xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-6">
-                        1h<span className="text-4xl md:text-5xl italic ml-2">30</span>
+                    <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-6">
+                        1h<span className="text-3xl md:text-5xl italic ml-2 tracking-wide">30</span>
                     </h2>
                     <p className="font-sans text-lg md:text-xl font-medium max-w-sm leading-relaxed text-gray-200">
                         Mão na massa. <br />

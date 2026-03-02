@@ -12,7 +12,7 @@ const AWARDS = [
 
 export default function HallOfFame() {
     return (
-        <section className="relative min-h-screen flex flex-col justify-center bg-[#06070E] py-32 overflow-hidden border-t border-white/5">
+        <section className="relative min-h-screen flex flex-col justify-center bg-[#06070E] py-20 md:py-32 overflow-hidden border-t border-white/5">
 
             {/* 1. Grain Overlay for Section */}
             <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none mix-blend-overlay">
@@ -26,25 +26,23 @@ export default function HallOfFame() {
                     <span className="font-mono text-xs tracking-[0.3em] text-cf-dim uppercase mb-3 block">
                         A Premiação
                     </span>
-                    <h2 className="font-serif text-5xl md:text-7xl text-cf-white tracking-tight leading-[0.9] mb-4">
+                    <h2 className="font-serif text-4xl md:text-7xl text-cf-white tracking-tight leading-[0.9] mb-4">
                         O PODIUM <br />
                         <span className="text-cf-dim">FINAL</span>
                     </h2>
-                    <p className="font-sans text-lg md:text-xl text-cf-dim/80 font-light leading-tight max-w-xl">
+                    <p className="font-sans text-base md:text-xl text-cf-dim/80 font-light leading-tight max-w-xl">
                         No final do ciclo, premiamos os melhores desempenhos em 4 categorias.
                     </p>
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-white/10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-[#222]">
                     {AWARDS.map((award, index) => (
                         <motion.div
                             key={award.id}
                             className={clsx(
-                                "group relative h-[350px] md:h-[450px] border-r border-white/10 flex flex-col items-center justify-center text-center p-6 md:p-12 overflow-hidden cursor-crosshair transition-all duration-700",
-                                "last:border-r-0 lg:last:border-r-0",
-                                // Fix mobile/tablet borders 
-                                "border-r border-white/10",
+                                "group relative h-[250px] md:h-[350px] lg:h-[450px] border-b md:border-b-0 border-r-0 md:border-r border-[#222] flex flex-col items-center justify-center text-center p-4 md:p-12 overflow-hidden cursor-crosshair transition-all duration-700",
+                                "last:border-b-0 last:border-r-0 lg:last:border-r-0",
                                 // Mobile: Right border on all except last? standard grid
                                 "md:nth-child(2n):border-r-0 lg:nth-child(2n):border-r", // tablet remove every 2nd
                                 "lg:last:border-r-0"
@@ -62,7 +60,7 @@ export default function HallOfFame() {
                                 </span>
 
                                 <motion.h3
-                                    className="font-serif text-5xl md:text-7xl font-bold leading-[0.85] tracking-tighter text-center"
+                                    className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold leading-[0.85] tracking-tighter text-center"
                                     variants={{
                                         idle: { scale: 1, y: 0 },
                                         hover: { scale: 1.05, y: -10 }

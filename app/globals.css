@@ -63,15 +63,23 @@
   }
 }
 
+html,
 :root {
   background-color: var(--color-cf-black);
   color: var(--color-cf-white);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -81,6 +89,17 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Utility Classes */

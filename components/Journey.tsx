@@ -8,20 +8,19 @@ const WEEKS_DATA = [
     { id: "02", title: "PRODUTO", subtitle: "& MVP" },
     { id: "03", title: "BRANDING", subtitle: "& POSICIONAMENTO" },
     { id: "04", title: "ESTRATÉGIA", subtitle: "DE CRESCIMENTO" },
-    { id: "05-06", title: "FINANÇAS", subtitle: "& EQUITY" },
+    { id: "05", title: "FINANÇAS", subtitle: "& EQUITY" },
+    { id: "06", title: "AUTOMAÇÃO", subtitle: "COM IA" },
     { id: "07", title: "VENDAS", subtitle: "& PROCESSOS" },
-    { id: "08", title: "AUTOMAÇÃO", subtitle: "COM IA" },
-    { id: "09", title: "PITCH", subtitle: "TRAINING" },
-    { id: "10", title: "DEMO DAY", subtitle: "O GRANDE DIA" },
+    { id: "08", title: "DEMO DAY", subtitle: "O GRANDE DIA" },
 ];
 
 export default function Journey() {
-    // Weeks 1-9 (8 items total because 5-6 is combined)
-    const regularWeeks = WEEKS_DATA.slice(0, 8);
-    const finalWeek = WEEKS_DATA[8];
+    // Weeks 1-7
+    const regularWeeks = WEEKS_DATA.slice(0, 7);
+    const finalWeek = WEEKS_DATA[7];
 
     return (
-        <section id="journey" className="w-full bg-cf-black py-28 px-6 md:px-12 lg:px-20 min-h-screen">
+        <section id="journey" className="w-full bg-cf-black py-20 md:py-28 px-5 md:px-12 lg:px-20 min-h-screen">
 
             <div className="max-w-7xl mx-auto w-full">
 
@@ -40,9 +39,9 @@ export default function Journey() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="font-serif text-5xl md:text-7xl text-cf-white tracking-tight leading-[0.9]"
+                        className="font-serif text-4xl md:text-7xl text-cf-white tracking-tight leading-[0.9]"
                     >
-                        10 SEMANAS <br />
+                        8 SEMANAS <br />
                         <span className="text-cf-dim">DE IMERSÃO.</span>
                     </motion.h2>
                 </div>
@@ -79,19 +78,19 @@ export default function Journey() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="w-full bg-cf-white text-cf-black py-10 px-8 md:py-12 md:px-16 relative overflow-hidden group hover:bg-gray-100 transition-colors duration-500"
+                    className="w-full bg-cf-white text-cf-black py-8 px-6 md:py-12 md:px-16 relative overflow-hidden group hover:bg-gray-100 transition-colors duration-500"
                 >
                     {/* Top Markers */}
                     <div className="flex justify-between items-start mb-6 md:mb-10">
                         <span className="font-mono text-2xl tracking-widest uppercase text-cf-black font-bold">
-                            WEEK 10
+                            WEEK 08
                         </span>
                         <ArrowUpRight className="w-6 h-6 text-cf-black" />
                     </div>
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center text-center">
-                        <h3 className="font-serif text-6xl md:text-8xl lg:text-9xl font-medium tracking-tighter leading-none mb-4">
+                        <h3 className="font-serif text-5xl md:text-8xl lg:text-9xl font-medium tracking-tighter leading-none mb-4">
                             DEMO DAY
                         </h3>
                         <p className="font-sans text-sm md:text-base tracking-[0.3em] uppercase opacity-60">
@@ -115,7 +114,7 @@ function JourneyCard({ card, index }: { card: typeof WEEKS_DATA[0], index: numbe
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="aspect-[4/5] w-full bg-cf-surface/20 border border-white/10 hover:border-white/30 hover:bg-cf-surface/40 transition-all duration-500 group relative flex flex-col justify-between p-8"
+            className="aspect-[3/4] md:aspect-[4/5] w-full bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.08] transition-all duration-500 group relative flex flex-col justify-between p-8"
         >
             {/* Top Left: Week */}
             <div className="flex justify-between items-start">
@@ -129,7 +128,7 @@ function JourneyCard({ card, index }: { card: typeof WEEKS_DATA[0], index: numbe
 
             {/* Center: Title */}
             <div className="self-center text-center">
-                <h3 className="font-serif text-3xl md:text-4xl text-cf-white leading-none">
+                <h3 className="font-serif text-4xl md:text-5xl lg:text-4xl text-cf-white leading-none">
                     {card.title}
                 </h3>
                 <p className="font-mono text-xs text-cf-dim mt-2 tracking-widest uppercase group-hover:text-cf-lines transition-colors">

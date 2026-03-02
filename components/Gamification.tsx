@@ -44,7 +44,7 @@ export default function Gamification() {
                             onMouseLeave={() => setActiveImage(null)}
                         >
                             <h2
-                                className="text-6xl md:text-8xl lg:text-9xl font-serif text-transparent transition-all duration-300 group-hover:text-cf-white"
+                                className="text-4xl md:text-8xl lg:text-9xl font-serif text-transparent transition-all duration-300 group-hover:text-cf-white"
                                 style={{ WebkitTextStroke: "1px #E0E0E0" }}
                             >
                                 {badge.text}

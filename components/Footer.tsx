@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
 
             {/* CTA Section */}
-            <div className="pt-40 pb-20 md:pt-60 md:pb-32 px-6 md:px-20 flex flex-col items-center text-center relative z-10">
+            <div className="pt-28 pb-16 md:pt-60 md:pb-32 px-5 md:px-20 flex flex-col items-center text-center relative z-10">
 
 
 
@@ -49,7 +49,7 @@ export default function Footer() {
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] font-bold text-white drop-shadow-2xl mix-blend-screen"
+                        className="font-serif text-5xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] font-bold text-white drop-shadow-2xl mix-blend-screen"
                     >
                         SUA CADEIRA
                     </motion.h2>
@@ -61,7 +61,7 @@ export default function Footer() {
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-white/90 drop-shadow-2xl"
+                        className="font-serif text-5xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-white/90 drop-shadow-2xl"
                     >
                         ESTÁ ESPERANDO.
                     </motion.h2>
@@ -78,7 +78,7 @@ export default function Footer() {
                         {/* Shadow Layer */}
                         <div className="absolute inset-0 bg-white translate-y-2 translate-x-2 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-difference"></div>
                         {/* Button */}
-                        <button className="relative bg-white text-black border-2 border-white px-10 md:px-16 py-5 md:py-6 text-lg md:text-xl font-bold font-sans tracking-widest uppercase transition-all duration-300 group-hover:bg-black group-hover:text-white flex items-center gap-4">
+                        <button className="relative bg-white text-black border-2 border-white px-8 md:px-16 py-4 md:py-6 text-base md:text-xl font-bold font-sans tracking-widest uppercase transition-all duration-300 group-hover:bg-black group-hover:text-white flex items-center gap-3 md:gap-4">
                             APLICAR AGORA
                             <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                         </button>
@@ -91,7 +91,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Footer */}
-            <div className="border-t border-white/10 px-6 md:px-20 py-12 relative z-10 bg-black/40 backdrop-blur-sm">
+            <div className="border-t border-white/10 px-5 md:px-20 py-8 md:py-12 relative z-10 bg-black/40 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 text-center">
 
                     {/* Logo */}

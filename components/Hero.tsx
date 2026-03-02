@@ -11,8 +11,12 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative h-screen w-full bg-cf-black flex flex-col justify-center items-center overflow-hidden"
+            className="relative w-full min-h-[100svh] flex items-center justify-center bg-cf-black overflow-hidden pt-20"
         >
+            {/* Grain Overlay */}
+            <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
+                <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+            </div>
             {/* 1. Fixed Background (High Quality, Static, Blended) */}
             <div className="absolute inset-0 z-0 opacity-40 mix-blend-overlay select-none pointer-events-none">
                 <Image
@@ -26,7 +30,7 @@ export default function Hero() {
             </div>
 
             {/* Content Layer */}
-            <div className="z-10 relative flex flex-col items-center text-center px-4">
+            <div className="z-10 relative flex flex-col items-center text-center px-5 w-full max-w-full">
 
                 {/* Eyebrow */}
                 <motion.span
@@ -40,12 +44,12 @@ export default function Hero() {
 
                 {/* Main Headline */}
                 <div className="group flex flex-col items-center gap-0 md:gap-2 cursor-default">
-                    <TextReveal className="font-serif text-[13vw] md:text-[9vw] lg:text-9xl leading-[0.85] tracking-tighter text-cf-white transition-all duration-300 hover:[-webkit-text-stroke:1px_#F5F5F5] justify-center text-center">
+                    <TextReveal className="font-serif text-[11vw] md:text-[9vw] lg:text-9xl leading-[0.95] md:leading-[0.85] tracking-tighter text-cf-white transition-all duration-300 hover:[-webkit-text-stroke:1px_#F5F5F5] justify-center text-center">
                         IDEIAS VIRAM
                     </TextReveal>
 
                     <div className="flex items-center gap-6 justify-center">
-                        <TextReveal className="font-serif text-[13vw] md:text-[9vw] lg:text-9xl leading-[0.85] tracking-tighter text-cf-white transition-all duration-300 hover:[-webkit-text-stroke:1px_#F5F5F5] justify-center text-center" delay={4}>
+                        <TextReveal className="font-serif text-[11vw] md:text-[9vw] lg:text-9xl leading-[0.95] md:leading-[0.85] tracking-tighter text-cf-white transition-all duration-300 hover:[-webkit-text-stroke:1px_#F5F5F5] justify-center text-center" delay={4}>
                             NEGÓCIOS REAIS
                         </TextReveal>
                     </div>
@@ -56,13 +60,13 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="mt-12 md:mt-16 flex items-center justify-center gap-4 md:gap-6"
+                    className="mt-8 md:mt-16"
                 >
-                    <span className="w-12 md:w-16 h-[1px] bg-cf-dim"></span>
-                    <p className="font-sans text-xs md:text-sm text-cf-dim tracking-widest uppercase">
-                        Prática intensa • Mentorias reais • Networking vitalício
-                    </p>
-                    <span className="w-12 md:w-16 h-[1px] bg-cf-dim"></span>
+                    <Link href="/application" className="group relative inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 md:py-5 border border-white/20 hover:border-white bg-transparent text-white font-mono text-xs md:text-sm tracking-widest uppercase transition-all duration-500 overflow-hidden">
+                        <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></span>
+                        <span className="relative z-10">Comece Agora</span>
+                        <span className="relative z-10 w-8 md:w-16 h-[1px] bg-white/20 group-hover:bg-white transition-all duration-500 flex-shrink-0"></span>
+                    </Link>
                 </motion.div>
             </div>
 

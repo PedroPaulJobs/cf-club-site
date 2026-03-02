@@ -3,185 +3,123 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Clock } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blogData";
 
 export default function BlogSection() {
-    // Featured post (first) + 2 secondary posts
-    const featuredPost = BLOG_POSTS[0];
-    const secondaryPosts = BLOG_POSTS.slice(1, 3);
+    // Pegar os últimos 6 posts mais recentes para o carrossel
+    const recentPosts = [...BLOG_POSTS].reverse().slice(0, 6);
+    // Duplicar o array para criar o efeito de loop infinito
+    const carouselPosts = [...recentPosts, ...recentPosts];
 
     return (
-        <section className="w-full bg-[#06070E] py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
-            <div className="max-w-7xl mx-auto w-full">
+        <section className="w-full bg-[#06070E] py-16 md:py-32 border-t border-white/5 overflow-hidden">
+            <div className="max-w-7xl mx-auto w-full px-5 md:px-12 lg:px-20">
 
                 {/* Header Row */}
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
-                    <div>
-                        <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="font-mono text-xs tracking-[0.3em] text-gray-500 uppercase mb-4 block"
-                        >
-                            Insights & Estratégia
-                        </motion.span>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="font-serif text-5xl md:text-7xl text-cf-white tracking-tighter leading-[0.85]"
-                        >
-                            THE LEDGER
-                        </motion.h2>
-                    </div>
-
-                    {/* Desktop CTA */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="hidden md:block"
-                    >
-                        <Link
-                            href="/blog"
-                            className="group inline-flex items-center gap-3 text-gray-400 hover:text-white font-mono text-sm uppercase tracking-widest transition-colors"
-                        >
-                            Ver Arquivo Completo
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </motion.div>
-                </div>
-
-                {/* Magazine Grid Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-
-                    {/* Featured Article (Large) */}
-                    <motion.article
-                        initial={{ opacity: 0, y: 30 }}
+                <div className="flex flex-col mb-12 md:mb-16">
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                        className="group relative lg:row-span-2 cursor-pointer"
+                        className="font-mono text-xs tracking-[0.3em] text-gray-500 uppercase mb-4 block"
                     >
-                        {/* Image Container */}
-                        <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden bg-gray-900">
-                            <Image
-                                src={featuredPost.image}
-                                alt={featuredPost.title}
-                                fill
-                                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                            />
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                        Insights & Estratégia
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="font-serif text-4xl md:text-6xl text-cf-white tracking-tighter leading-[0.85]"
+                    >
+                        THE LEDGER
+                    </motion.h2>
+                </div>
+            </div>
 
-                            {/* Category Badge */}
-                            <span className="absolute top-6 left-6 font-mono text-[10px] tracking-[0.3em] text-white uppercase bg-white/10 backdrop-blur-sm px-3 py-1.5 border border-white/20">
-                                {featuredPost.category}
-                            </span>
+            {/* Carousel Container */}
+            <div className="relative w-full flex overflow-hidden group pb-4">
+                {/* Gradient Fades for Edges - Creates the illusion of fading into the background */}
+                <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#06070E] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#06070E] to-transparent z-10 pointer-events-none" />
 
-                            {/* Content Over Image */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                                {/* Meta */}
-                                <div className="flex items-center gap-4 mb-4">
-                                    <span className="font-mono text-xs text-white/60 uppercase">
-                                        {featuredPost.date}
-                                    </span>
-                                    <span className="w-1 h-1 rounded-full bg-white/40" />
-                                    <span className="font-mono text-xs text-white/60 flex items-center gap-1">
-                                        <Clock className="w-3 h-3" />
-                                        {featuredPost.readTime}
-                                    </span>
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }} // Scrola exatamente a metade da largura (o array original)
+                    transition={{
+                        repeat: Infinity,
+                        ease: "linear",
+                        duration: 40, // Tempo do scroll (aumente para mais lento, diminua para mais rápido)
+                    }}
+                    className="w-max flex gap-6 md:gap-8 px-5 md:px-12 lg:px-20 cursor-grab active:cursor-grabbing hover:[animation-play-state:paused]"
+                >
+                    {carouselPosts.map((post, index) => (
+                        <Link key={`${post.id}-${index}`} href={`/blog/${post.slug}`} className="block relative h-[400px] md:h-[450px] w-[280px] sm:w-[320px] md:w-[350px] shrink-0">
+                            <article className="relative rounded-2xl overflow-hidden h-full flex flex-col justify-end group/card">
+                                {/* Image Container */}
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover/card:scale-105"
+                                />
+
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-90" />
+
+                                {/* Icon Top Right */}
+                                <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full p-2 border border-white/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                                    <ArrowUpRight className="w-4 h-4 text-white" />
                                 </div>
 
-                                {/* Title */}
-                                <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white font-medium leading-tight mb-4 group-hover:text-white transition-colors">
-                                    {featuredPost.title}
-                                </h3>
-
-                                {/* Excerpt */}
-                                <p className="font-sans text-sm md:text-base text-white/70 leading-relaxed line-clamp-2 mb-4">
-                                    {featuredPost.excerpt}
-                                </p>
-
-                                {/* Read Link */}
-                                <div className="flex items-center gap-2 text-white/80 group-hover:text-white transition-colors">
-                                    <span className="font-mono text-xs uppercase tracking-wider">Ler artigo</span>
-                                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                                </div>
-                            </div>
-                        </div>
-                    </motion.article>
-
-                    {/* Secondary Articles (Stacked) */}
-                    <div className="flex flex-col gap-6 md:gap-8">
-                        {secondaryPosts.map((post, index) => (
-                            <motion.article
-                                key={post.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                                className="group flex gap-5 md:gap-6 cursor-pointer"
-                            >
-                                {/* Thumbnail */}
-                                <div className="relative w-28 h-28 md:w-36 md:h-36 flex-shrink-0 overflow-hidden bg-gray-900">
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
-                                </div>
-
-                                {/* Content */}
-                                <div className="flex flex-col justify-center py-1">
-                                    {/* Meta */}
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <span className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase">
-                                            {post.date}
-                                        </span>
-                                        <span className="font-mono text-[10px] tracking-[0.2em] text-white/60 uppercase border border-white/20 px-2 py-0.5">
-                                            {post.category}
-                                        </span>
-                                    </div>
-
-                                    {/* Title */}
-                                    <h3 className="font-sans text-lg md:text-xl font-bold text-white leading-snug mb-2 group-hover:text-white/90 transition-colors line-clamp-2">
+                                {/* Content Bottom */}
+                                <div className="relative z-10 p-6 flex flex-col gap-3">
+                                    <h3 className="font-serif text-xl sm:text-2xl text-white font-medium leading-[1.1]">
                                         {post.title}
                                     </h3>
+                                    <p className="font-sans text-xs sm:text-sm text-white/60 line-clamp-2 md:line-clamp-3 leading-relaxed">
+                                        {post.excerpt}
+                                    </p>
 
-                                    {/* Read Time */}
-                                    <span className="font-mono text-xs text-white/40 flex items-center gap-1.5">
-                                        <Clock className="w-3 h-3" />
-                                        {post.readTime} de leitura
-                                    </span>
+                                    {/* Meta Row */}
+                                    <div className="flex items-center gap-3 mt-2">
+                                        <span className="font-mono text-[10px] tracking-[0.2em] text-white/80 uppercase border border-white/30 px-2 py-0.5 rounded-sm">
+                                            {post.category}
+                                        </span>
+                                        <span className="font-mono text-[10px] sm:text-xs text-white/50 flex items-center gap-1">
+                                            <Clock className="w-3 h-3" />
+                                            {post.readTime}
+                                        </span>
+                                    </div>
                                 </div>
-                            </motion.article>
-                        ))}
-                    </div>
-                </div>
+                            </article>
+                        </Link>
+                    ))}
+                </motion.div>
+            </div>
 
-                {/* Mobile CTA */}
+            {/* Bottom Appended Line and Button */}
+            <div className="max-w-7xl mx-auto w-full px-5 md:px-12 lg:px-20 mt-12 flex justify-center">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="flex justify-center mt-12 md:hidden"
+                    transition={{ duration: 0.5 }}
+                    className="w-full relative flex items-center justify-center"
                 >
+                    {/* Horizontal Line behind */}
+                    <div className="absolute inset-0 flex items-center pointer-events-none" aria-hidden="true">
+                        <div className="w-full border-t border-white/10"></div>
+                    </div>
+                    {/* Button with background to cover line */}
                     <Link
                         href="/blog"
-                        className="group inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white font-mono text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+                        className="relative z-10 inline-flex items-center gap-2 bg-[#06070E] px-8 py-3 text-sm font-medium text-white hover:text-white/80 transition-colors uppercase tracking-widest border border-white/10 rounded-full group"
                     >
-                        Ver Todos
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        Ver todos os artigos
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </Link>
                 </motion.div>
-
             </div>
         </section>
     );
