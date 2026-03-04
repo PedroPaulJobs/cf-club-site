@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   verification: {
-    google: "AIwMVBWBE3Wnq3OTdlx21hCQhDQFGb3Wj80qip5w35I",
+    google: "3clu1DAJoQot5P2ClNeaTq7ddcfYgRnkJtpnwFnP_S8",
   },
   title: "CF CLUB • BUILDERS EDITION",
   description: "Transforme ideias em negócios reais. 10 semanas de execução intensa, mentoria e networking brutal no Sebrae Labs.",
