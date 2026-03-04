@@ -170,7 +170,7 @@ export default function BlogPostPage() {
         <main className="min-h-screen bg-[#06070E]">
 
             {/* Hero Image */}
-            <div className="relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+            <div className="relative w-full aspect-[4/3] md:aspect-[3/1] overflow-hidden">
                 <Image
                     src={post.image}
                     alt={post.title}
@@ -185,7 +185,7 @@ export default function BlogPostPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="absolute top-28 left-6 md:left-12 z-10"
+                    className="absolute top-20 md:top-28 left-6 md:left-12 z-10"
                 >
                     <Link
                         href="/"

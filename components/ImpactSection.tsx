@@ -22,7 +22,7 @@ const METRICS: Metric[] = [
 
 function Counter({ value, suffix }: { value: number; suffix?: string }) {
     const ref = useRef<HTMLSpanElement>(null);
-    const inView = useInView(ref, { once: true, margin: "-100px" });
+    const inView = useInView(ref, { once: true, margin: "-20px" });
     const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
     const display = useTransform(spring, (current) =>
         Math.round(current).toString().padStart(value < 10 ? 2 : 0, "0")
@@ -56,12 +56,12 @@ export default function ImpactSection() {
                 </div>
 
                 {/* Grid (Heavier Borders) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 border-t-[3px] md:border-[3px] md:border-b-0 md:border-r-0 border-black">
+                <div className="grid grid-cols-2 md:grid-cols-3 border-t-[3px] border-l-[3px] md:border-[3px] md:border-b-0 md:border-r-0 border-black">
                     {METRICS.map((metric, index) => (
                         <div
                             key={index}
                             className={clsx(
-                                "border-b-[3px] md:border-r-[3px] border-black p-8 md:p-10 flex flex-col justify-between h-[240px] md:h-[280px] hover:bg-black hover:text-[#F5F5F5] transition-colors duration-500 group relative overflow-hidden",
+                                "border-b-[3px] border-r-[3px] md:border-r-[3px] border-black p-4 md:p-10 flex flex-col justify-between h-[160px] md:h-[280px] hover:bg-black hover:text-[#F5F5F5] transition-colors duration-500 group relative overflow-hidden",
                                 "md:col-span-1"
                             )}
                         >
@@ -73,7 +73,7 @@ export default function ImpactSection() {
                             {/* Data */}
                             <div className="flex flex-col h-full justify-between">
                                 {/* Number (Semibold Sans + Increased Size) */}
-                                <div className="font-sans text-7xl md:text-9xl font-semibold tracking-tighter leading-none mt-2">
+                                <div className="font-sans text-4xl md:text-9xl font-semibold tracking-tighter leading-none mt-2">
                                     <Counter value={metric.value} suffix={metric.suffix} />
                                 </div>
 

@@ -43,25 +43,25 @@ export default function Footer() {
                     Última Chamada
                 </motion.span>
 
-                <div className="overflow-hidden relative z-10 max-w-5xl mx-auto">
+                <div className="relative z-10 max-w-5xl mx-auto">
                     <motion.h2
-                        initial={{ y: 100 }}
-                        whileInView={{ y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "100px" }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-5xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] font-bold text-white drop-shadow-2xl mix-blend-screen"
+                        className="font-serif text-4xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] font-bold text-white drop-shadow-2xl"
                     >
                         SUA CADEIRA
                     </motion.h2>
                 </div>
 
-                <div className="overflow-hidden relative z-10 max-w-5xl mx-auto">
+                <div className="relative z-10 max-w-5xl mx-auto">
                     <motion.h2
-                        initial={{ y: 100 }}
-                        whileInView={{ y: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "100px" }}
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-5xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-white/90 drop-shadow-2xl"
+                        className="font-serif text-4xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-white/90 drop-shadow-2xl"
                     >
                         ESTÁ ESPERANDO.
                     </motion.h2>

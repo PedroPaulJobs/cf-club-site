@@ -36,15 +36,14 @@ export default function HallOfFame() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-[#222]">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-t border-b border-[#222]">
                     {AWARDS.map((award, index) => (
                         <motion.div
                             key={award.id}
                             className={clsx(
-                                "group relative h-[250px] md:h-[350px] lg:h-[450px] border-b md:border-b-0 border-r-0 md:border-r border-[#222] flex flex-col items-center justify-center text-center p-4 md:p-12 overflow-hidden cursor-crosshair transition-all duration-700",
+                                "group relative h-[150px] md:h-[350px] lg:h-[450px] border-b md:border-b-0 border-r-0 md:border-r border-[#222] flex flex-col items-center justify-center text-center p-3 md:p-12 overflow-hidden cursor-crosshair transition-all duration-700",
                                 "last:border-b-0 last:border-r-0 lg:last:border-r-0",
-                                // Mobile: Right border on all except last? standard grid
-                                "md:nth-child(2n):border-r-0 lg:nth-child(2n):border-r", // tablet remove every 2nd
+                                index % 2 === 0 ? "border-r border-[#222]" : "",
                                 "lg:last:border-r-0"
                             )}
                             initial="idle"
@@ -54,13 +53,13 @@ export default function HallOfFame() {
 
 
                             {/* Content */}
-                            <div className="relative z-10 flex flex-col items-center gap-6 mix-blend-difference text-white">
-                                <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase opacity-70">
+                            <div className="relative z-10 flex flex-col items-center gap-3 md:gap-6 mix-blend-difference text-white">
+                                <span className="font-mono text-[9px] md:text-xs tracking-[0.4em] uppercase opacity-70">
                                     Categoria 0{index + 1}
                                 </span>
 
                                 <motion.h3
-                                    className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold leading-[0.85] tracking-tighter text-center"
+                                    className="font-serif text-xl md:text-5xl lg:text-7xl font-bold leading-[0.85] tracking-tighter text-center"
                                     variants={{
                                         idle: { scale: 1, y: 0 },
                                         hover: { scale: 1.05, y: -10 }

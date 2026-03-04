@@ -25,7 +25,7 @@ export default function Journey() {
             <div className="max-w-7xl mx-auto w-full">
 
                 {/* Header */}
-                <div className="mb-20 md:mb-32 max-w-2xl">
+                <div className="mb-12 md:mb-32 max-w-2xl">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -46,30 +46,35 @@ export default function Journey() {
                     </motion.h2>
                 </div>
 
-                {/* Staggered Grid (Weeks 1-9) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-20">
+                {/* Mobile Grid: flat 2-col layout (visible only on mobile) */}
+                <div className="grid grid-cols-2 gap-3 mb-8 md:hidden">
+                    {regularWeeks.map((card, i) => (
+                        <JourneyCard key={card.id} card={card} index={i} />
+                    ))}
+                </div>
 
+                {/* Desktop Staggered Grid (hidden on mobile) */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {/* Column 1 */}
-                    <div className="flex flex-col gap-6 md:gap-8">
+                    <div className="flex flex-col gap-8">
                         {regularWeeks.filter((_, i) => i % 3 === 0).map((card, i) => (
                             <JourneyCard key={card.id} card={card} index={i * 3} />
                         ))}
                     </div>
 
                     {/* Column 2 */}
-                    <div className="flex flex-col gap-6 md:gap-8 pt-0 md:pt-16 lg:pt-32">
+                    <div className="flex flex-col gap-8 pt-16 lg:pt-32">
                         {regularWeeks.filter((_, i) => i % 3 === 1).map((card, i) => (
                             <JourneyCard key={card.id} card={card} index={i * 3 + 1} />
                         ))}
                     </div>
 
                     {/* Column 3 */}
-                    <div className="flex flex-col gap-6 md:gap-8 pt-0 md:pt-32 lg:pt-64">
+                    <div className="flex flex-col gap-8 pt-32 lg:pt-64">
                         {regularWeeks.filter((_, i) => i % 3 === 2).map((card, i) => (
                             <JourneyCard key={card.id} card={card} index={i * 3 + 2} />
                         ))}
                     </div>
-
                 </div>
 
                 {/* Week 10: Grand Finale */}
@@ -114,11 +119,11 @@ function JourneyCard({ card, index }: { card: typeof WEEKS_DATA[0], index: numbe
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="aspect-[3/4] md:aspect-[4/5] w-full bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.08] transition-all duration-500 group relative flex flex-col justify-between p-8"
+            className="aspect-square md:aspect-[4/5] w-full bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.08] transition-all duration-500 group relative flex flex-col justify-between p-4 md:p-8"
         >
             {/* Top Left: Week */}
             <div className="flex justify-between items-start">
-                <span className="font-mono text-xl tracking-widest text-cf-white uppercase group-hover:text-cf-white transition-colors font-bold opacity-90">
+                <span className="font-mono text-sm md:text-xl tracking-widest text-cf-white uppercase group-hover:text-cf-white transition-colors font-bold opacity-90">
                     WEEK {card.id}
                 </span>
 
@@ -128,7 +133,7 @@ function JourneyCard({ card, index }: { card: typeof WEEKS_DATA[0], index: numbe
 
             {/* Center: Title */}
             <div className="self-center text-center">
-                <h3 className="font-serif text-4xl md:text-5xl lg:text-4xl text-cf-white leading-none">
+                <h3 className="font-serif text-2xl md:text-5xl lg:text-4xl text-cf-white leading-none">
                     {card.title}
                 </h3>
                 <p className="font-mono text-xs text-cf-dim mt-2 tracking-widest uppercase group-hover:text-cf-lines transition-colors">
