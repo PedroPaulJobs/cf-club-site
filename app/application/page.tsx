@@ -256,8 +256,7 @@ export default function ApplicationPage() {
                                         <input
                                             {...register("age", {
                                                 required: "Idade é obrigatória",
-                                                min: { value: 14, message: "Mínimo 14 anos" },
-                                                max: { value: 22, message: "Máximo 22 anos" }
+                                                min: { value: 1, message: "Idade inválida" }
                                             })}
                                             type="number"
                                             placeholder="00"

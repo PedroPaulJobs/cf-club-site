@@ -49,7 +49,7 @@ export default function Specs() {
         <section className="w-full bg-cf-black relative font-mono py-16 md:py-24 border-t border-white/20">
 
             {/* Terminal Container */}
-            <div className="max-w-7xl mx-auto border border-[#333] shadow-2xl relative z-10 mx-4 md:mx-auto">
+            <div className="max-w-7xl mx-auto border border-[#333] shadow-2xl relative z-10 mx-4 md:mx-auto overflow-hidden">
                 {/* Subtle Background Inner Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
 
@@ -58,7 +58,7 @@ export default function Specs() {
                     <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                    <span className="text-xs text-cf-lines/50 ml-4 font-mono">cf_club_specs.sh</span>
+                    <span className="text-xs text-cf-lines/70 ml-4 font-mono">cf_club_specs.sh</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#0A0A0A] relative z-10">

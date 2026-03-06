@@ -23,6 +23,7 @@ export default function Hero() {
                     src="/images/methodology.png" // Placeholder for high-end dark texture
                     alt="Background Texture"
                     fill
+                    quality={70}
                     className="object-cover grayscale contrast-125 brightness-50"
                     priority
                 />

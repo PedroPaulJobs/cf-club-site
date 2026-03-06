@@ -49,7 +49,7 @@ export default function ImpactSection() {
 
                 {/* Section Header */}
                 <div className="mb-16 border-b-[3px] border-black pb-8">
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-cf-white tracking-tight leading-[0.9] text-center mb-4">
+                    <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-cf-black tracking-tight leading-[0.9] text-center mb-4">
                         8 SEMANAS <br />
                         <span className="text-cf-dim">DE IMERSÃO.</span>
                     </h2>

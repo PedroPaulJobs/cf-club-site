@@ -63,18 +63,33 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 :root {
   background-color: var(--color-cf-black);
   color: var(--color-cf-white);
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;
+  max-width: 100vw;
   -webkit-text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 * {
@@ -112,6 +127,10 @@ h6 {
 }
 
 /* Grain Overlay */
+.grain-overlay {
+  clip-path: inset(0);
+}
+
 .grain-overlay::before {
   content: "";
   position: fixed;

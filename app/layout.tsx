@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Playfair_Display, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import SmoothScrollLayout from "@/components/ui/SmoothScrollLayout";
-import GrainOverlay from "@/components/ui/GrainOverlay";
+import dynamic from "next/dynamic";
+
+const SmoothScrollLayout = dynamic(() => import("@/components/ui/SmoothScrollLayout"));
+const GrainOverlay = dynamic(() => import("@/components/ui/GrainOverlay"));
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -54,6 +56,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="preconnect" href="https://grainy-gradients.vercel.app" />
+        <link rel="dns-prefetch" href="https://grainy-gradients.vercel.app" />
+      </head>
       <body
         className={`${playfair.variable} ${manrope.variable} ${jetbrains.variable} font-sans antialiased bg-cf-black text-cf-white`}
       >

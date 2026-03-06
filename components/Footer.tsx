@@ -15,8 +15,9 @@ export default function Footer() {
                     src="/images/execution-overhead.jpg"
                     alt="Atmosphere"
                     fill
+                    quality={70}
+                    loading="lazy"
                     className="object-cover object-center grayscale contrast-[1.3] opacity-60"
-                    priority
                 />
                 {/* Heavy Black Overlay */}
                 <div className="absolute inset-0 bg-black/85 mix-blend-multiply"></div>
