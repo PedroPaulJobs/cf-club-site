@@ -46,10 +46,35 @@ export default function Journey() {
                     </motion.h2>
                 </div>
 
-                {/* Mobile Grid: flat 2-col layout (visible only on mobile) */}
-                <div className="grid grid-cols-2 gap-3 mb-8 md:hidden">
+                {/* Mobile Layout: Sleek Timeline List (visible only on mobile) */}
+                <div className="flex flex-col gap-3 mb-12 md:hidden">
                     {regularWeeks.map((card, i) => (
-                        <JourneyCard key={card.id} card={card} index={i} />
+                        <motion.div
+                            key={card.id}
+                            initial={{ opacity: 0, x: -15 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            className="w-full flex items-center justify-between p-5 bg-gradient-to-r from-white/[0.03] to-transparent border border-white/10 rounded-xl relative overflow-hidden group"
+                        >
+                            {/* Accent line */}
+                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-cf-dim/30 group-hover:bg-white transition-colors"></div>
+
+                            <div className="flex flex-col items-start pl-3 w-full">
+                                <div className="flex w-full items-baseline justify-between mb-1">
+                                    <span className="font-mono text-[10px] text-cf-white/50 tracking-[0.2em]">
+                                        WEEK {card.id}
+                                    </span>
+                                    <ArrowUpRight className="w-3.5 h-3.5 text-cf-dim/40 group-hover:text-cf-white transition-colors" />
+                                </div>
+                                <h3 className="font-serif text-2xl text-cf-white tracking-tight leading-none mb-1">
+                                    {card.title}
+                                </h3>
+                                <p className="font-mono text-[9px] text-cf-dim uppercase tracking-widest mt-1 group-hover:text-cf-lines transition-colors">
+                                    {card.subtitle}
+                                </p>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
 

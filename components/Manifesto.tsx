@@ -24,17 +24,11 @@ export default function Manifesto() {
                     O Manifesto
                 </motion.span>
 
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-[0.95] tracking-tight text-cf-black pb-2"
-                >
+                <h2 className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-[0.95] tracking-tight text-cf-black pb-2 my-6">
                     O CF CLUB NÃO É
                     <br />
                     <span className="text-[#999999]">PARA TODO MUNDO.</span>
-                </motion.h2>
+                </h2>
 
                 <motion.p
                     initial={{ opacity: 0 }}
