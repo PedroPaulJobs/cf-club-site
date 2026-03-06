@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Import } from "lucide-react";
 import TextReveal from "./ui/TextReveal";
 import Magnetic from "./ui/Magnetic";
 
@@ -64,7 +64,7 @@ export default function Hero() {
                 >
                     <Link href="/application" className="group relative inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 md:py-5 border border-white/20 hover:border-white bg-transparent text-white font-mono text-xs md:text-sm tracking-widest uppercase transition-all duration-500 overflow-hidden">
                         <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></span>
-                        <span className="relative z-10">Comece Agora</span>
+                        <span className="relative z-10">Inscrever-se Agora</span>
                         <span className="relative z-10 w-8 md:w-16 h-[1px] bg-white/20 group-hover:bg-white transition-all duration-500 flex-shrink-0"></span>
                     </Link>
                 </motion.div>

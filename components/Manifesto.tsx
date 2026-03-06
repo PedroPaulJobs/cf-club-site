@@ -30,7 +30,7 @@ export default function Manifesto() {
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-cf-black to-cf-dim"
+                        className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight text-cf-black"
                     >
                         O CF CLUB NÃO É
                         <br />
