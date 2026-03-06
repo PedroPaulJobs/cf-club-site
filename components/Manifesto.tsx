@@ -24,19 +24,17 @@ export default function Manifesto() {
                     O Manifesto
                 </motion.span>
 
-                <div className="overflow-hidden">
-                    <motion.h2
-                        initial={{ y: 80 }}
-                        whileInView={{ y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight text-cf-black"
-                    >
-                        O CF CLUB NÃO É
-                        <br />
-                        <span className="text-[#999999]">PARA TODO MUNDO.</span>
-                    </motion.h2>
-                </div>
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="font-serif text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-[0.95] tracking-tight text-cf-black pb-2"
+                >
+                    O CF CLUB NÃO É
+                    <br />
+                    <span className="text-[#999999]">PARA TODO MUNDO.</span>
+                </motion.h2>
 
                 <motion.p
                     initial={{ opacity: 0 }}
