@@ -44,25 +44,25 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
 
 export default function ImpactSection() {
     return (
-        <section className="bg-[#F5F5F5] text-[#06070E] py-16 md:py-24 border-t-[3px] border-black">
+        <section className="bg-[#F5F5F5] text-[#06070E] py-16 md:py-24 border-t border-black/10 md:border-t-[3px] md:border-black">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Header */}
-                <div className="mb-16 border-b-[3px] border-black pb-8">
+                <div className="mb-12 md:mb-16 border-b border-black/10 md:border-b-[3px] md:border-black pb-8">
                     <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-cf-black tracking-tight leading-[0.9] text-center mb-4">
                         8 SEMANAS <br />
                         <span className="text-cf-dim">DE IMERSÃO.</span>
                     </h2>
                 </div>
 
-                {/* Grid (Heavier Borders) */}
-                <div className="grid grid-cols-2 md:grid-cols-3 border-t-[3px] border-l-[3px] md:border-[3px] md:border-b-0 md:border-r-0 border-black">
+                {/* Grid (Minimalist on mobile, Heavy on Desktop) */}
+                <div className="grid grid-cols-2 md:grid-cols-3 border-t border-l border-black/10 md:border-[3px] md:border-b-0 md:border-r-0 md:border-black">
                     {METRICS.map((metric, index) => (
                         <div
                             key={index}
                             className={clsx(
-                                "border-b-[3px] border-r-[3px] md:border-r-[3px] border-black p-4 md:p-10 flex flex-col justify-between h-[160px] md:h-[280px] hover:bg-black hover:text-[#F5F5F5] transition-colors duration-500 group relative overflow-hidden",
-                                "md:col-span-1"
+                                "border-b border-r border-black/10 md:border-b-[3px] md:border-r-[3px] md:border-black p-5 md:p-10 flex flex-col justify-between h-[160px] md:h-[280px] hover:bg-black hover:text-[#F5F5F5] transition-colors duration-500 group relative overflow-hidden",
+                                "col-span-1"
                             )}
                         >
                             {/* Decorative ID (Visible) */}
@@ -94,8 +94,8 @@ export default function ImpactSection() {
                 </div>
 
                 {/* Footer Note */}
-                <div className="mt-8 flex justify-between items-end border-l-[3px] border-black pl-4">
-                    <p className="font-mono text-xs font-bold uppercase max-w-md leading-relaxed text-black/70">
+                <div className="mt-8 flex justify-between items-end border-l border-black/10 md:border-l-[3px] md:border-black pl-4">
+                    <p className="font-mono text-[10px] md:text-xs font-bold uppercase max-w-md leading-relaxed text-black/50 md:text-black/70">
                         *Dados coletados após o término da primeira edição do CF Club em 2025.
                     </p>
                 </div>
