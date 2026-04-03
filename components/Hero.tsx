@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronDown, Import } from "lucide-react";
 import TextReveal from "./ui/TextReveal";
 import Magnetic from "./ui/Magnetic";
 
@@ -15,14 +14,15 @@ export default function Hero() {
         >
             {/* Grain Overlay */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
-                <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+                <svg className="w-full h-full"><filter id="heroNoise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#heroNoise)"/></svg>
             </div>
             {/* 1. Fixed Background (High Quality, Static, Blended) */}
             <div className="absolute inset-0 z-0 opacity-40 mix-blend-overlay select-none pointer-events-none">
                 <Image
-                    src="/images/methodology.png" // Placeholder for high-end dark texture
+                    src="/images/methodology.png"
                     alt="Background Texture"
                     fill
+                    sizes="100vw"
                     quality={70}
                     className="object-cover grayscale contrast-125 brightness-50"
                     priority
@@ -63,7 +63,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 0.8 }}
                     className="mt-8 md:mt-16"
                 >
-                    <Link href="/application" className="group relative inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 md:py-5 border border-white/20 hover:border-white bg-transparent text-white font-mono text-xs md:text-sm tracking-widest uppercase transition-all duration-500 overflow-hidden">
+                    <Link href="https://www.sympla.com.br/evento/cf-builders-edition-encontro-de-founders/3348048?algoliaID=9a84202e5ccd37d5545d998f71c1d327&share_id=copiarlink" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center gap-3 px-8 md:px-12 py-4 md:py-5 border border-white/20 hover:border-white bg-transparent text-white font-mono text-xs md:text-sm tracking-widest uppercase transition-all duration-500 overflow-hidden">
                         <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></span>
                         <span className="relative z-10">Inscrever-se Agora</span>
                         <span className="relative z-10 w-8 md:w-16 h-[1px] bg-white/20 group-hover:bg-white transition-all duration-500 flex-shrink-0"></span>
@@ -71,21 +71,6 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-            >
-                <span className="font-mono text-[10px] text-cf-dim tracking-widest uppercase">Scroll</span>
-                <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <ChevronDown className="w-5 h-5 text-cf-dim" />
-                </motion.div>
-            </motion.div>
 
             {/* Brutalist Corner Decorations */}
             <div className="absolute top-24 left-8 w-6 h-6 border-l-2 border-t-2 border-cf-lines/20 hidden md:block"></div>

@@ -4,9 +4,14 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const SPECS_DATA = [
-    { label: "START DATE", value: "10 ABRIL 2026", detail: "Turma 01" },
-    { label: "DURATION", value: "8 SEMANAS", detail: "8 Semanas de Imersão" },
-    { label: "LOCATION", value: "SEBRAE LABS / BH", detail: "Presencial" },
+    { label: "START DATE", value: "11 ABRIL 2026", detail: "Turma 01" },
+    { label: "DURATION", value: "14H ÀS 17H", detail: "8 Semanas de Imersão" },
+    {
+        label: "LOCATION",
+        value: "AUDITÓRIO IBMEC BH",
+        detail: "Presencial",
+        link: "https://maps.app.goo.gl/5KEX6fvL2edtDMM36",
+    },
     { label: "EDITION", value: "BUILDERS EDITION", detail: "Vagas Limitadas" },
 ];
 
@@ -48,6 +53,19 @@ export default function Specs() {
     return (
         <section className="w-full bg-cf-black relative font-mono py-16 md:py-24 border-t border-white/20">
 
+            {/* Title above the terminal */}
+            <motion.div
+                initial={{ opacity: 0, y: -16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="max-w-7xl mx-auto px-4 md:px-0 mb-8 text-center"
+            >
+                <h2 className="text-2xl md:text-3xl font-bold text-white tracking-widest uppercase">
+                    Abertura CF Builder Edition
+                </h2>
+            </motion.div>
+
             {/* Terminal Container */}
             <div className="max-w-7xl mx-auto border border-[#333] shadow-2xl relative z-10 mx-4 md:mx-auto overflow-hidden">
                 {/* Subtle Background Inner Glow */}
@@ -83,9 +101,20 @@ export default function Specs() {
 
                             {/* Value */}
                             <div className="mt-auto">
-                                <span className="text-xl md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block">
-                                    <TypeWriter text={item.value} delay={index * 200 + 500} />
-                                </span>
+                                {item.link ? (
+                                    <a
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xl md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+                                    >
+                                        <TypeWriter text={item.value} delay={index * 200 + 500} />
+                                    </a>
+                                ) : (
+                                    <span className="text-xl md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block">
+                                        <TypeWriter text={item.value} delay={index * 200 + 500} />
+                                    </span>
+                                )}
                                 <span className="text-sm text-cf-dim/50 mt-4 block">
                                     // {item.detail}
                                 </span>
@@ -97,6 +126,24 @@ export default function Specs() {
                     ))}
                 </div>
             </div>
+
+            {/* CTA Button */}
+            <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="max-w-7xl mx-auto px-4 md:px-0 mt-8 flex justify-center"
+            >
+                <a
+                    href="https://www.sympla.com.br/evento/cf-builders-edition-encontro-de-founders/3348048?algoliaID=9a84202e5ccd37d5545d998f71c1d327&share_id=copiarlink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-white text-black font-bold font-mono tracking-widest uppercase px-10 py-4 text-sm hover:bg-green-400 transition-colors duration-300"
+                >
+                    Garanta seu Ingresso
+                </a>
+            </motion.div>
         </section>
     );
 }

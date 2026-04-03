@@ -14,14 +14,14 @@ export default function Header() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const navItems = [
         { label: "MÉTODO", href: "#methodology" },
         { label: "JORNADA", href: "#journey" },
-        { label: "APLICAR", href: "#footer", highlight: true },
+        { label: "APLICAR", href: "https://www.sympla.com.br/evento/cf-builders-edition-encontro-de-founders/3348048?algoliaID=9a84202e5ccd37d5545d998f71c1d327&share_id=copiarlink", highlight: true, external: true },
     ];
 
     return (
@@ -44,6 +44,8 @@ export default function Header() {
                                 <Magnetic>
                                     <Link
                                         href={item.href}
+                                        target={item.external ? "_blank" : undefined}
+                                        rel={item.external ? "noopener noreferrer" : undefined}
                                         className={`font-mono text-sm tracking-widest uppercase transition-colors duration-300 ${item.highlight
                                             ? "bg-cf-white text-cf-black px-4 py-2 hover:bg-cf-dim hover:text-white inline-block"
                                             : "text-cf-dim hover:text-cf-white"
@@ -92,6 +94,8 @@ export default function Header() {
                             >
                                 <Link
                                     href={item.href}
+                                    target={item.external ? "_blank" : undefined}
+                                    rel={item.external ? "noopener noreferrer" : undefined}
                                     onClick={() => setMenuOpen(false)}
                                     className="font-serif text-4xl text-cf-white hover:text-cf-dim transition-colors"
                                 >

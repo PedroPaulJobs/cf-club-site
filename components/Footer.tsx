@@ -15,7 +15,8 @@ export default function Footer() {
                     src="/images/execution-overhead.jpg"
                     alt="Atmosphere"
                     fill
-                    quality={70}
+                    sizes="100vw"
+                    quality={60}
                     loading="lazy"
                     className="object-cover object-center grayscale contrast-[1.3] opacity-60"
                 />
@@ -26,7 +27,7 @@ export default function Footer() {
 
                 {/* Grain Overlay */}
                 <div className="absolute inset-0 opacity-[0.07] pointer-events-none mix-blend-overlay">
-                    <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+                    <svg className="w-full h-full"><filter id="footerNoise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#footerNoise)"/></svg>
                 </div>
             </div>
 
@@ -75,7 +76,7 @@ export default function Footer() {
                     transition={{ delay: 0.5 }}
                     className="mt-24 relative z-10"
                 >
-                    <Link href="/application" className="group relative inline-block">
+                    <Link href="https://www.sympla.com.br/evento/cf-builders-edition-encontro-de-founders/3348048?algoliaID=9a84202e5ccd37d5545d998f71c1d327&share_id=copiarlink" target="_blank" rel="noopener noreferrer" className="group relative inline-block">
                         {/* Shadow Layer */}
                         <div className="absolute inset-0 bg-white translate-y-2 translate-x-2 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-difference"></div>
                         {/* Button */}

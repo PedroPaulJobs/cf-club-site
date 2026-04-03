@@ -38,7 +38,9 @@ export default function Methodology() {
                         src="/images/execution-overhead.jpg"
                         alt="Mão na massa"
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         quality={70}
+                        loading="lazy"
                         className="object-cover transition-all duration-700 ease-out group-hover:scale-110 opacity-40 group-hover:opacity-60 grayscale contrast-125"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-cf-surface via-cf-surface/90 to-cf-surface/50 group-hover:opacity-80 transition-opacity duration-500"></div>

@@ -61,6 +61,9 @@ export default function BlogSection() {
                                     src={post.image}
                                     alt={post.title}
                                     fill
+                                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 350px"
+                                    quality={75}
+                                    loading="lazy"
                                     className="object-cover transition-transform duration-700 group-hover/card:scale-105"
                                 />
 

@@ -9,16 +9,22 @@ const GrainOverlay = dynamic(() => import("@/components/ui/GrainOverlay"));
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
   variable: "--font-playfair",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
   variable: "--font-manrope",
 });
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
   variable: "--font-jetbrains",
 });
 
@@ -57,8 +63,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="preconnect" href="https://grainy-gradients.vercel.app" />
-        <link rel="dns-prefetch" href="https://grainy-gradients.vercel.app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body
         className={`${playfair.variable} ${manrope.variable} ${jetbrains.variable} font-sans antialiased bg-cf-black text-cf-white`}

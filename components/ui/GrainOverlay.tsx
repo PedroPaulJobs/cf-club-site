@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function GrainOverlay() {
     return (
         <div className="pointer-events-none fixed inset-0 z-50 h-full w-full select-none overflow-hidden">

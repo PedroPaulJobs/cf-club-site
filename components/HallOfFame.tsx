@@ -16,7 +16,7 @@ export default function HallOfFame() {
 
             {/* 1. Grain Overlay for Section */}
             <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none mix-blend-overlay">
-                <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+                <svg className="w-full h-full"><filter id="hofNoise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#hofNoise)"/></svg>
             </div>
 
             <div className="max-w-screen-2xl mx-auto w-full px-6 relative z-10">
