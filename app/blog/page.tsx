@@ -17,7 +17,7 @@ export default function BlogPage() {
 
                 {/* Film Grain Texture */}
                 <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
-                    <div className="w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-repeat"></div>
+                    <svg className="w-full h-full"><filter id="blogNoise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#blogNoise)"/></svg>
                 </div>
 
                 <div className="max-w-6xl mx-auto relative z-10">
@@ -87,6 +87,8 @@ export default function BlogPage() {
                                             src={post.image}
                                             alt={post.title}
                                             fill
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            loading="lazy"
                                             className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
