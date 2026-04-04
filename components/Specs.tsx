@@ -87,11 +87,11 @@ export default function Specs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.15, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="group relative flex flex-col justify-between p-8 border-b md:border-b-0 md:border-r border-[#222] last:border-r-0 hover:bg-[#111] transition-colors duration-500 min-h-[220px] md:min-h-[280px]"
+                            className="group relative flex flex-col justify-between p-4 md:p-8 border-b md:border-b-0 md:border-r border-[#222] last:border-r-0 hover:bg-[#111] transition-colors duration-500 min-h-[140px] md:min-h-[220px]"
                         >
                             {/* Index */}
-                            <div className="flex justify-between items-start mb-8">
-                                <span className="text-xs tracking-[0.2em] text-cf-dim/60 uppercase group-hover:text-cf-dim transition-colors">
+                            <div className="flex justify-between items-start mb-4 md:mb-8">
+                                <span className="text-[10px] md:text-xs tracking-[0.2em] text-cf-dim/60 uppercase group-hover:text-cf-dim transition-colors">
                                     {item.label}
                                 </span>
                                 <span className="text-[10px] text-cf-dim/40 group-hover:text-green-500 transition-colors">
@@ -106,16 +106,16 @@ export default function Specs() {
                                         href={item.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-xl md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block underline underline-offset-4 decoration-white/30 hover:decoration-white"
+                                        className="text-lg md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block underline underline-offset-4 decoration-white/30 hover:decoration-white"
                                     >
                                         <TypeWriter text={item.value} delay={index * 200 + 500} />
                                     </a>
                                 ) : (
-                                    <span className="text-xl md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block">
+                                    <span className="text-lg md:text-2xl font-bold text-cf-lines tracking-tight group-hover:text-white transition-colors block">
                                         <TypeWriter text={item.value} delay={index * 200 + 500} />
                                     </span>
                                 )}
-                                <span className="text-sm text-cf-dim/50 mt-4 block">
+                                <span className="text-xs md:text-sm text-cf-dim/50 mt-4 block">
                                     // {item.detail}
                                 </span>
                             </div>
