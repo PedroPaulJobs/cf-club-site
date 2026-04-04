@@ -79,11 +79,11 @@ export default function ImpactSection() {
 
                                 <div className="space-y-1">
                                     {/* Label (Solid Black, Bold, Uppercase) */}
-                                    <p className="font-sans text-base md:text-lg uppercase tracking-tight font-bold text-black group-hover:text-white">
+                                    <p className="font-sans text-xs sm:text-base md:text-lg uppercase tracking-tight font-bold text-black group-hover:text-white leading-tight">
                                         {metric.label}
                                     </p>
                                     {metric.description && (
-                                        <p className="font-mono text-xs text-black/60 uppercase group-hover:text-white/60 font-semibold">
+                                        <p className="font-mono text-[10px] md:text-xs text-black/60 uppercase group-hover:text-white/60 font-semibold">
                                             {metric.description}
                                         </p>
                                     )}

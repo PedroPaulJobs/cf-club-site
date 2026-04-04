@@ -62,7 +62,7 @@ export default function Manifesto() {
                                     key={i}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, margin: "100px" }}
                                     transition={{ delay: i * 0.1 }}
                                     className="font-sans text-base md:text-4xl font-black text-black tracking-tight leading-tight pl-6 md:pl-12 -indent-6 md:-indent-12"
                                 >
@@ -89,7 +89,7 @@ export default function Manifesto() {
                                     key={i}
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, margin: "100px" }}
                                     transition={{ delay: 0.2 + (i * 0.1) }}
                                     className="font-sans text-sm md:text-2xl text-[#666666] font-light line-through decoration-2 decoration-black/30 transition-all cursor-not-allowed pl-5 md:pl-8 -indent-5 md:-indent-8"
                                 >

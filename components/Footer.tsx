@@ -39,7 +39,7 @@ export default function Footer() {
                 <motion.span
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "100px" }}
                     className="font-mono text-xs tracking-[0.3em] text-white/60 uppercase mb-8 relative z-10"
                 >
                     Última Chamada
@@ -72,9 +72,9 @@ export default function Footer() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="mt-24 relative z-10"
+                    viewport={{ once: true, margin: "100px" }}
+                    transition={{ delay: 0.3 }}
+                    className="mt-12 md:mt-24 relative z-10"
                 >
                     <Link href="https://www.sympla.com.br/evento/cf-builders-edition-encontro-de-founders/3348048?algoliaID=9a84202e5ccd37d5545d998f71c1d327&share_id=copiarlink" target="_blank" rel="noopener noreferrer" className="group relative inline-block">
                         {/* Shadow Layer */}

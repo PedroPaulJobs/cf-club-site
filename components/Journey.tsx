@@ -29,7 +29,7 @@ export default function Journey() {
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "100px" }}
                         className="font-mono text-xs tracking-[0.3em] text-cf-dim uppercase mb-6 block"
                     >
                         O Cronograma
@@ -37,7 +37,7 @@ export default function Journey() {
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "100px" }}
                         transition={{ duration: 0.8 }}
                         className="font-serif text-4xl md:text-7xl text-cf-white tracking-tight leading-[0.9]"
                     >
@@ -53,8 +53,8 @@ export default function Journey() {
                             key={card.id}
                             initial={{ opacity: 0, x: -15 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            viewport={{ once: true, margin: "100px" }}
+                            transition={{ duration: 0.5, delay: Math.min(i * 0.05, 0.2) }}
                             className="w-full flex items-center justify-between p-5 bg-gradient-to-r from-white/[0.03] to-transparent border border-white/10 rounded-xl relative overflow-hidden group"
                         >
                             {/* Accent line */}
